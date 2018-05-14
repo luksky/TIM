@@ -1,0 +1,30 @@
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">Number:</span>
+  </div>
+  <input type="number" class="form-control" min="0" [(ngModel)]="liczba" placeholder="Input count" aria-label="Input count" aria-describedby="basic-addon1">
+</div>
+<button type="button" class="btn btn-success" (click)="generate()">Generate random</button>
+
+<table class="table">
+<tr>
+	<td>
+		(index)
+	</td>
+	<td>
+		Value
+	</td>
+</tr>
+<tr *ngFor="let nr of resArray; let i = index">
+	<td>
+		{{i}}
+	</td>
+	<td>
+		{{nr}}
+	</td>
+</tr>
+</table>
+
+<button type="button" class="btn btn-success" (click)="countAVG()">Generate avg</button>
+
+<p class="p-3">avg: {{avg}}</p>
