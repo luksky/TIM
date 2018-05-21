@@ -1,6 +1,7 @@
 package tim.l1.avg;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.Random;

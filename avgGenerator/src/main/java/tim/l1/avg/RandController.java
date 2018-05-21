@@ -1,22 +1,19 @@
 package tim.l1.avg;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
-@Controller
+@RestController
 public class RandController {
     @RequestMapping(value="/Random", method=RequestMethod.GET)
     @ResponseBody
-    public ArrayList Random(@RequestParam(value="count", defaultValue = "0") int count) {
+    public RandObj Random(@RequestParam(value="count", defaultValue = "0") int count) {
         ArrayList arrayList= new ArrayList();
         RandService randService = new RandService();
         arrayList=randService.randomList(count);
-        return arrayList;
+        return new RandObj(count,arrayList);
         }
 
 }
